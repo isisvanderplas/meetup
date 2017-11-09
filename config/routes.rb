@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :categories
+  resources :themes
   root to: 'pages#home'
 
   devise_for :users

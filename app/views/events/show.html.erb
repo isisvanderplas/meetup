@@ -1,1 +1,7 @@
 <h1>events/show</h1>
+
+
+<h4>Categories</h4>
+<% @categories.each do |category| %>
+  <span class="label label-success"><%= category.name %></span>
+<% end %>
