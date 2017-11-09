@@ -6,5 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-event1 = Event.new({name: "New year's eve!", description: "I'm organizing a small houseparty for all my friends :)"})
-event2 = Event.new({name: "Birthday", description: "Will you join me on celebrating my birthday? we'll have a picknick in the park. Dogs allowed ;)"})
+
+User.destroy_all
+
+isis = User.create!(
+  email: 'isis@email.com',
+  password: '123456'
+)
+
+Event.create!(
+  name: "New year's eve!",
+  description: "I'm organizing a small houseparty for all my friends :)",
+  location: "My house",
+  starts_at: Date.today,
+  ends_at: Date.tomorrow,
+  user: isis
+)
+#
+# event1 = Event.new({name: "New year's eve!", description: "I'm organizing a small houseparty for all my friends :)"})
+# event2 = Event.new({name: "Birthday", description: "Will you join me on celebrating my birthday? we'll have a picknick in the park. Dogs allowed ;)"})
